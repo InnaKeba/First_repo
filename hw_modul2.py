@@ -275,12 +275,12 @@
 #     return " " * spaces + string  
 
 # 12
- def first(size, *args):
-     return size + len(args) #len(args) підраховує кількість додаткових аргументів
- def second(size,**kwargs):
-     return size + len(kwargs) #len(kwargs) підраховує кількість ключових аргументів
- print(first(5, 10, "Inna")) 
- print(second(3, name="Inna", age=35))
+#  def first(size, *args):
+#      return size + len(args) #len(args) підраховує кількість додаткових аргументів
+#  def second(size,**kwargs):
+#      return size + len(kwargs) #len(kwargs) підраховує кількість ключових аргументів
+#  print(first(5, 10, "Inna")) 
+#  print(second(3, name="Inna", age=35))
 
 # 13
 # def factorial(n):
