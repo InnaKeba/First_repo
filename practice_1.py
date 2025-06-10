@@ -40,3 +40,4 @@ print(money_spent_during_the_week)
 
 sum_money = sum(money_spent_during_the_week) # агрегація витрат 
 print(f"Витрати за тиждень:{sum_money}")
+print(f"Фактична витрата: {weekly_budjet - sum_money}")
