@@ -33,6 +33,7 @@ def encrypt_by_key(message, key):
             cipher += letter
     
     print(cipher)
+    return(cipher)
 #Виклик функції    
 encrypt_by_key("To be or not to be", 5)
 encrypt_by_key("YT GJ TW STY YT GJ",-5)
