@@ -1,6 +1,7 @@
 #Написати код який буде рахувати вік людини
 from datetime import datetime
 
+#Варіант 1
 def calculate_person_age(date_of_birth_str: str) -> int:
     date_of_birth = datetime.strptime(date_of_birth_str, "%Y-%m-%d")
     today = datetime.today()
