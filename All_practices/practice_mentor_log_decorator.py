@@ -1,0 +1,42 @@
+"""Написати код, який буде для функції виводити інфорирмацію про її роботу"""
+from datetime import datetime
+from functools import wraps
+
+'''
+2024-01-22 08:30:01 INFO User logged in successfully.
+2024-01-22 08:45:23 DEBUG Attempting to connect to the database.
+2024-01-22 09:00:45 ERROR Database connection failed.
+2024-01-22 09:15:10 INFO Data export completed.
+2024-01-22 10:30:55 WARNING Disk usage above 80%.
+2024-01-22 11:05:00 DEBUG Starting data backup process.
+2024-01-22 11:30:15 ERROR Backup process failed.
+2024-01-22 12:00:00 INFO User logged out.
+2024-01-22 12:45:05 DEBUG Checking system health.
+2024-01-22 13:30:30 INFO Scheduled maintenance.
+'''
+# print('2024-01-22 13:30:30 INFO User logged in')
+'''
+2024-01-22 13:30:30 INFO Calling function sum_numbers with arguments 1, 2 with result of 3
+'''
+def log_decorator(level: str):
+    def actual_log_decorator(func):
+        @wraps(func)
+        def wrapper(*args, **kwargs):
+            # print(func)
+            # print(args, kwargs)
+            result = func(*args, **kwargs)
+            current_time_string = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            print(f"{current_time_string} {level} Calling function {func.__name__} with arguments {args}, {kwargs} with result {result}")
+            return result
+        return wrapper
+    return actual_log_decorator
+
+
+@log_decorator ('INFO') #декоратор, який буде виводити інформацію про роботу функції
+def sum_numbers(num_a:int, num_b:int) -> int:
+    return num_a + num_b
+print(sum_numbers(1, 2))
+
+print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+
+# print(dir(sum_numbers)) #дозволяє побачити атрибути функції sum_numbers
