@@ -35,8 +35,25 @@ def log_decorator(level: str):
 @log_decorator ('INFO') #декоратор, який буде виводити інформацію про роботу функції
 def sum_numbers(num_a:int, num_b:int) -> int:
     return num_a + num_b
-print(sum_numbers(1, 2))
 
-print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
+
+# print(sum_numbers(1, 2))
+# print(datetime.now().strftime('%Y-%m-%d %H:%M:%S'))
 
 # print(dir(sum_numbers)) #дозволяє побачити атрибути функції sum_numbers
+
+my_list = ["hello", 1, [1, 2, 3]]
+# print("hello", 1, [1, 2, 3])
+# print(my_list[0], my_list[1], my_list[2])
+# print(*my_list)
+
+number_list = [2, 3]
+print(sum_numbers(*number_list))
+
+my_dict = {"num_a": 5, "num_b": 7}
+sum_numbers(**my_dict)
+
+def example(**args):
+    print(args)
+
+example(a=1, b="hello", c=2, d=[4, 5, 6])
